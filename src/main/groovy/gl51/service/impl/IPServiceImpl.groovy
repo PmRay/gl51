@@ -1,6 +1,7 @@
-package gl51.service
+package gl51.service.impl
 
 import gl51.data.Ip
+import gl51.service.IPService
 
 
 @Singleton

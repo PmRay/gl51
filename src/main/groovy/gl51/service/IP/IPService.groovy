@@ -1,4 +1,4 @@
-package gl51.service
+package gl51.service.IP
 
 import gl51.data.Ip
 

@@ -1,7 +1,7 @@
 package gl51.service.impl
 
-import gl51.service.PictureService
-import gl51.service.PictureUpdateService
+import gl51.service.Picture.PictureService
+import gl51.service.Picture.PictureUpdateService
 
 import javax.inject.Inject
 

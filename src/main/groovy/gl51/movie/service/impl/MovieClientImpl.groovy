@@ -5,6 +5,7 @@ import gl51.movie.service.MovieClient
 import gl51.movie.service.MovieRegistry
 
 import javax.inject.Inject
+import javax.inject.Singleton
 
 @Singleton
 class MovieClientImpl implements MovieClient {

@@ -9,6 +9,7 @@ import javax.inject.Singleton
 class MovieRegistryImpl implements MovieRegistry {
 
     private List<Movie> internalRegistry = []
+
     @Override
     void addMovieToFavorites(String imdbID) {
         internalRegistry << new Movie(imdbID: imdbID)

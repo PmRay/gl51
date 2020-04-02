@@ -23,7 +23,7 @@ jobs:
         with:
           java-version: 8
       # do not forget `git update-index --chmod=+x gradlew` to fix permission before !
-      - git update-index --chmod=+x gradlew
+      
       - uses: eskatos/gradle-command-action@v1
         with:
           arguments: test

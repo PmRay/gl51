@@ -9,12 +9,19 @@ import javax.inject.Inject
 
 @MicronautTest
 class MovieRegistryImplTest extends Specification {
-    @Inject MovieRegistryImpl registry
-    @Inject MovieClientImpl client
+    @Inject
+    MovieRegistryImpl registry
+
+    @Inject
+    MovieClientImpl client
+
+    @Inject
+    MovieClient movieClientMock = Mock()
 
     void "injection should work"() {
         expect:
         registry != null
+        movieClientMock != null
     }
 
     void "favorites should be empty"() {

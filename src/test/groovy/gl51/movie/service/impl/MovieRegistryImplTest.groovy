@@ -28,8 +28,9 @@ class MovieRegistryImplTest extends Specification {
         then:
         registry.listFavorites().size() == 1
         client.getMovieDetail("abcde")!=null
-        client.getMovieDetail("aaaa") == null
+        client.getMovieDetail("aaadea") == null
     }
+
     @MockBean(MovieClientImpl)
     MovieClient client() {
         Mock(MovieClient)

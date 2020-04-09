@@ -13,13 +13,13 @@ class MovieClientImpl implements MovieClient {
 
     @Override
     Movie getMovieDetail(String imdbID) {
-        if(!registry.listFavorites().isEmpty()) {
+        /*if(!registry.listFavorites().isEmpty()) {
             for(Movie movie : registry.listFavorites()) {
                 if(imdbID == movie.getImdbID()) {
                     return movie
                 }
             }
-        }
+        }*/
         return null
     }
 }

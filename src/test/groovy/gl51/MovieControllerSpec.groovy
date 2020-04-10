@@ -46,7 +46,7 @@ class MovieControllerSpec extends Specification {
             Flowable flowable = client.retrieve(HttpRequest.GET("/movie"), Argument.listOf(Movie))
             def content = flowable.firstElement().blockingGet()
         expect:
-            content.blockingGet() == []
+            content == []
             //response.status == HttpStatus.OK
     }
 

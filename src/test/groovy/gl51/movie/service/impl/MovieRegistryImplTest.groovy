@@ -1,5 +1,6 @@
 package gl51.movie.service.impl
 
+import gl51.movie.data.Movie
 import gl51.movie.service.MovieClient
 import io.micronaut.test.annotation.MicronautTest
 import io.micronaut.test.annotation.MockBean
@@ -12,34 +13,29 @@ class MovieRegistryImplTest extends Specification {
     @Inject
     MovieRegistryImpl registry
 
-    @Inject
-    MovieClientImpl client
 
-    @Inject
-    MovieClient movieClientMock = Mock()
-
-    void "injection should work"() {
+    void "injectionShouldWork"() {
         expect:
-        registry != null
-        movieClientMock != null
+            registry != null
     }
 
-    void "favorites should be empty"() {
+    void "favoritesShouldBeEmpty"() {
         expect:
-        registry.listFavorites() == []
+            registry.listFavorites() == []
     }
 
-    void "adding a facovite should fill in the database"() {
+    void "addingAFavoriteShouldFillInTheDatabase"() {
         when:
-        registry.addMovieToFavorites("abcde")
+            registry.addMovieToFavorites("abcde")
         then:
-        registry.listFavorites().size() == 1
-        client.getMovieDetail("abcde")!=null
-        client.getMovieDetail("aaadea") == null
+            registry.listFavorites().size() == 1
+            registry.listFavorites().find { it.title == 'my movie'}
     }
 
     @MockBean(MovieClientImpl)
-    MovieClient client() {
-        Mock(MovieClient)
+    MovieClient movieClient() {
+        def mock = Mock(MovieClient)
+        mock.getMovieDetail("abcde") >> new Movie(imdbID: "abcde", title: 'my movie')
+        mock
     }
 }

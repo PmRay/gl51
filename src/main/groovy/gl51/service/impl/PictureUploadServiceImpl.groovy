@@ -1,7 +1,7 @@
 package gl51.service.impl
 
 
-import gl51.service.Picture.PictureUploadService
+import gl51.service.picture.PictureUploadService
 
 import javax.inject.Inject
 

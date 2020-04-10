@@ -1,6 +1,4 @@
-package gl51.service.Picture
-
-import gl51.data.Picture
+package gl51.service.picture
 
 interface PictureUpdateService {
     // Update DB

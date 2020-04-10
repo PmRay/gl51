@@ -1,5 +1,6 @@
 package gl51
 
+import gl51.movie.data.Movie
 import gl51.movie.data.MovieRequest
 import gl51.movie.service.MovieRegistry
 import io.micronaut.http.annotation.Controller
@@ -17,9 +18,12 @@ class MovieController {
     MovieRegistry registry
 
     @Get("/")
-    HttpStatus index() {
-        HttpStatus.OK
+    List<Movie> index() {
+        registry.listFavorites()
     }
+    /*HttpStatus index() {
+        HttpStatus.OK
+    }*/
 
     @Post("/")
     HttpStatus addMovie(MovieRequest movieRequest) {

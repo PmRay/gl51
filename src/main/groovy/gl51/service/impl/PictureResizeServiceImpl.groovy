@@ -12,7 +12,6 @@ class PictureResizeServiceImpl implements PictureResizeService {
 
     @Override
     Picture resize() {
-        
     }
 
 }
